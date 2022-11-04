@@ -5,16 +5,11 @@ import useLocalStorage from 'use-local-storage';
 
 export default function Save({ zipcode, ready, onLoaded }) {
   const [saved, setSaved] = useLocalStorage("zipcode", "");
-
   const [data, setData] = useState({})
 
   useEffect(() => {
     onLoaded(saved)
   }, [saved])
-
-  const onRemember = () => {
-
-  }
 
   if (!zipcode || !ready) {
     return null
