@@ -11,7 +11,7 @@ export default function Save({ zipcode, ready, onLoaded }) {
   const { loading, checkout, authenticate, isAuthorized, user } = useUnlock({
     title: "My weather app",
     locks: {
-      '0xbf02f832f3f2dc3085ceced0520c53e9b97d1293': {
+      '0xa8094f76682f4d0648b56aaea9667041e7f47dbe': {
         network: 5
       }
     }
@@ -30,10 +30,13 @@ export default function Save({ zipcode, ready, onLoaded }) {
       Authenticate to save your zipcode!
     </button>
   }
+
+  console.log({ isAuthorized })
+
   if (!isAuthorized) {
-    <button onClick={() => checkout()} class="bg-blue-500 text-white font-bold py-2 px-4 rounded enabled:hover:bg-blue-700 disabled:opacity-75">
+    return (<button onClick={() => checkout()} class="bg-blue-500 text-white font-bold py-2 px-4 rounded enabled:hover:bg-blue-700 disabled:opacity-75">
       Purchase Premium!
-    </button>
+    </button>)
   }
 
   return (
