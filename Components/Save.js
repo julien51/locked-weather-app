@@ -26,12 +26,10 @@ export default function Save({ zipcode, ready, onLoaded }) {
   }
 
   if (!user) {
-    return <button onClick={authenticate} class="bg-blue-500 text-white font-bold py-2 px-4 rounded enabled:hover:bg-blue-700 disabled:opacity-75">
+    return <button onClick={() => authenticate()} class="bg-blue-500 text-white font-bold py-2 px-4 rounded enabled:hover:bg-blue-700 disabled:opacity-75">
       Authenticate to save your zipcode!
     </button>
   }
-
-  console.log({ isAuthorized })
 
   if (!isAuthorized) {
     return (<button onClick={() => checkout()} class="bg-blue-500 text-white font-bold py-2 px-4 rounded enabled:hover:bg-blue-700 disabled:opacity-75">
